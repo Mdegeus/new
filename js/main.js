@@ -1,4 +1,4 @@
-const btnToTop =document.querySelector(".btn-back-top");
+const btnToTop = document.querySelector(".btn-back-top");
 
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
