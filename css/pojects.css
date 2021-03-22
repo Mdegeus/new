@@ -11,8 +11,13 @@ body{
     background-color: var(--footer-color);
 }
 
+.btn, .btn p, .btn h4{
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+}
+
 .color1{
-    color: var(--color1)
+    color: var(--color1);
 }
 
 .color2{
