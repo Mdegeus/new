@@ -1,10 +1,13 @@
 {
     "cSpell.ignoreWords": [
+        "basedbtn",
+        "click",
         "geus",
         "htmls",
         "loosduinen",
         "mdegeus",
-        "project"
+        "project",
+        "time"
     ],
     "liveServer.settings.port": 5501
 }
