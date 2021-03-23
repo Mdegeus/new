@@ -13,6 +13,13 @@ if (localStorage.getItem('Theme') == null || localStorage.getItem('Theme') == ""
 
 if (document.querySelector('.theme-switcher')){
     const button = document.querySelector('.theme-switcher')
+
+    if (localStorage.getItem('Theme') === "dark-theme"){
+        button.textContent = "<Theme: Dark>"
+    }else{
+        button.textContent = "<Theme: Light>"
+    }
+
     button.addEventListener('click', function(){
         if (localStorage.getItem('Theme') === "dark-theme"){
             localStorage.setItem('Theme', "light-theme");
