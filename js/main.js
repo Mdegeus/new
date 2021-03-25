@@ -2,6 +2,8 @@ const btnToTop = document.querySelector(".btn-back-top");
 const btnTB = document.querySelector(".btn-timeBased");
 const button = document.querySelector('.theme-switcher');
 
+const bgURL = 'https://www.youtube.com/embed/gdZLi9oWNZg'
+
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -23,7 +25,8 @@ if (localStorage.getItem('Theme') === "dark-theme"){
     button.textContent = "<Theme: Light>";
 }
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function(e){
+    e.preventDefault();
     if (localStorage.getItem('Theme') === "dark-theme"){
         localStorage.setItem('Theme', "light-theme");
         document.documentElement.className = localStorage.getItem('Theme');
@@ -70,3 +73,27 @@ btnTB.addEventListener('click', function(){
 
 setInterval(SwitchWithTime ,1000)
 timeBasedbtnClick()
+
+function GlitchState(){
+    const all = document.querySelectorAll("*")
+    for (let i = 0; i < all.length; i++){
+        const taggsName = all[i].tagName.toLowerCase();
+        if (taggsName != 'html' && taggsName != 'html' && taggsName != 'body'){
+            all[i].style.visibility = 'hidden';
+        }
+    }
+}
+
+document.querySelector('.HomeButton').addEventListener('click', function(e){
+    if (e.altKey){
+        e.preventDefault();
+        const audio = new Audio('../audio/kh.mp3');
+        audio.play();
+        //document.style.animation = change-background;
+        GlitchState();
+        document.write(`<p>HI</p>`);
+        setInterval(function(){
+            document.write(`<p>HI</p>`);
+        }, 1000)
+    }
+});

@@ -18,3 +18,15 @@ body{
 .color2{
     color: var(--color2);
 }
+
+@keyframes change-background {
+    0% {
+      background-color: #69b7eb;
+    }
+    50% {
+        background-color: #b3dbd3;
+    }
+    100% {
+        background-color: #f4d6db;
+    }
+  }
