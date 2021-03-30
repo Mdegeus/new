@@ -71,7 +71,3 @@ btnTB.addEventListener('click', function(){
 
 setInterval(SwitchWithTime ,1000)
 timeBasedbtnClick()
-
-document.querySelector('.HomeButton').addEventListener('click', function(e){
-    e.preventDefault();
-});
