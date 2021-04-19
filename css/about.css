@@ -1,0 +1,15 @@
+.ContactSection {
+    height: 100vh;
+}
+
+.center-div-contacts{
+    text-align: center;
+    position: absolute;
+    top: 45vh;
+    left: 80vh;
+}
+
+.center-div-contacts h3, .center-div-contacts p{
+    color: var(--color2);
+    font-size: 3vh;
+}
