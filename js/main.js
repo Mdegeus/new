@@ -43,7 +43,7 @@ document.documentElement.className = localStorage.getItem('Theme')
 function SwitchWithTime(){
     if (localStorage.getItem('timeBased-Theme') === 'true'){
         const date = new Date();
-        if (date.getHours() > 22 && date.getHours() < 6){
+        if (date.getHours() < 6 && date.getHours() > 22 || date.getHours() === 0){ //////////////// Test at night
             localStorage.setItem('Theme', "dark-theme");
             document.documentElement.className = localStorage.getItem('Theme');
             button.textContent = "<Theme: Dark>";
@@ -71,3 +71,8 @@ btnTB.addEventListener('click', function(){
 
 setInterval(SwitchWithTime ,1000)
 timeBasedbtnClick()
+
+setInterval(function(){
+    const date = new Date();
+    console.log(date.getHours());
+}, 1000)
