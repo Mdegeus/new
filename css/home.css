@@ -7,6 +7,14 @@ body{
     color: var(--navbar-text-color);
 }
 
+.project-btn{
+    background-color: var(--button-color1)
+}
+
+.professionProfile-btn{
+    background-color: var(--button-color2)
+}
+
 .footer{
     background-color: var(--footer-color);
 }

@@ -15,6 +15,8 @@
     --color8: ;
     --color9: ;
     --color10: ;
+    --button-color1: var(--color1);
+    --button-color2: var(--color2);
 
 }
 
@@ -35,5 +37,6 @@
     --color8: #666666;
     --color9: #666666;
     --color10: #666666;
-
+    --button-color1: var(--color1);
+    --button-color2: var(--color2);
 }
