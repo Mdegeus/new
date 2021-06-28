@@ -1,16 +1,18 @@
-.btn{
+.btn {
     background-color: var(--button-color);
 }
 
-.btn p, .btn h4, .btn code{
+.btn p,
+.btn h4,
+.btn code {
     color: var(--button-text-color);
     background-color: transparent;
 }
 
-.color1{
+.color1 {
     color: var(--color1);
 }
 
-.color2{
+.color2 {
     color: var(--color2);
 }

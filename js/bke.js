@@ -18,7 +18,7 @@ const WinningValues = [
  * Add correct classes
  */
 
-let players = [ ];
+let players = [];
 let currentPlayer = 0; // This is the index of the array of the currentplayer
 const fields = document.querySelectorAll('.field');
 const resetButton = document.querySelector(".reset-btn");
@@ -49,14 +49,14 @@ let winner = null;
  */
 
 
- fields.forEach(field => {
-    field.addEventListener("click", function(){
+fields.forEach(field => {
+    field.addEventListener("click", function () {
         if (winner === null) {
             const allowed = addSymbolToField(field);
             if (allowed !== false) {
                 checkWinner();
                 RefreshScreen();
-            }   
+            }
         }
     });
 });
@@ -65,15 +65,15 @@ let winner = null;
  * Assignment 
  * Give body to the reset function (the function exists below)
  */
-addPlayerButton.textContent = "Add Player" + (players.length+1);
+addPlayerButton.textContent = "Add Player" + (players.length + 1);
 
-addPlayerButton.addEventListener("click", function(){
+addPlayerButton.addEventListener("click", function () {
     if (players.length < 2) {
         if (playerNameInput.value !== "") {
             players.push(new Player(playerNameInput.value, symbols[players.length]));
             playerNameInput.value = "";
             RefreshScreen();
-        }else{
+        } else {
             alert("Please enter a player name.")
         }
     }
@@ -82,24 +82,24 @@ addPlayerButton.addEventListener("click", function(){
 resetButton.addEventListener("click", resetGame);
 
 function RefreshScreen() {
-    if (players.length+1 !== 3) {
-        addPlayerButton.textContent = "Add Player" + (players.length+1);
-    }else{
+    if (players.length + 1 !== 3) {
+        addPlayerButton.textContent = "Add Player" + (players.length + 1);
+    } else {
         addPlayerButton.textContent = "Full";
     }
     if (players[0]) {
         plr1Label.textContent = players[0].name + `(${players[0].GetLevel()})`;
-    }else{
+    } else {
         plr1Label.innertextContentHTML = "player 1";
     }
     if (players[1]) {
         plr2Label.textContent = players[1].name + `(${players[1].GetLevel()})`;
-    }else{
+    } else {
         plr2Label.textContent = "player 2";
     }
     if (players.length === 2) {
         playerTurnLabel.textContent = players[currentPlayer].name + "'s Turn"
-    }else{
+    } else {
         playerTurnLabel.textContent = "Please at 2 players";
     }
 }
@@ -129,7 +129,7 @@ function ShowWinner(plr) {
 }
 
 function checkWinner() {
-    
+
     let streak = 0;
     let plrWon = false;
 
@@ -139,27 +139,27 @@ function checkWinner() {
             const thisField = fields[checkvalue]
             if (plrWon === false) { ////// to reduce from 2 not needed if statements to 1
                 if (thisField.textContent === players[currentPlayer].symbol) {
-                    streak ++;
+                    streak++;
                     if (streak === 3) {
-                        plrWon = players[currentPlayer]; 
+                        plrWon = players[currentPlayer];
                     }
-                }else{
+                } else {
                     streak = 0
                 }
             }
         });
     });
 
-    if (plrWon){
+    if (plrWon) {
         ShowWinner(plrWon);
     }
 
     console.log(streak);
-    
+
     if (currentPlayer === 1) {
         currentPlayer = 0
-    }else{
-        currentPlayer ++;
+    } else {
+        currentPlayer++;
     }
 }
 

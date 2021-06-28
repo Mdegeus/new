@@ -9,28 +9,28 @@ function topFunction() {
 
 btnToTop.addEventListener('click', topFunction);
 
-if (localStorage.getItem('Theme') === null || localStorage.getItem('Theme') === ""){
+if (localStorage.getItem('Theme') === null || localStorage.getItem('Theme') === "") {
     localStorage.setItem('Theme', 'dark-theme');
 }
 
-if (localStorage.getItem('Theme') === null || localStorage.getItem('Theme') === ""){
+if (localStorage.getItem('Theme') === null || localStorage.getItem('Theme') === "") {
     localStorage.setItem('Theme', 'dark-theme');
 }
 
-if (localStorage.getItem('Theme') === "dark-theme"){
+if (localStorage.getItem('Theme') === "dark-theme") {
     button.textContent = "<Theme: Dark>";
-}else{
+} else {
     button.textContent = "<Theme: Light>";
 }
 
-button.addEventListener('click', function(e){
+button.addEventListener('click', function (e) {
     e.preventDefault();
-    if (localStorage.getItem('Theme') === "dark-theme"){
+    if (localStorage.getItem('Theme') === "dark-theme") {
         localStorage.setItem('Theme', "light-theme");
         document.documentElement.className = localStorage.getItem('Theme');
         button.textContent = "<Theme: Light>";
 
-    }else{
+    } else {
         localStorage.setItem('Theme', "dark-theme");
         document.documentElement.className = localStorage.getItem('Theme');
         button.textContent = "<Theme: Dark>";
@@ -40,14 +40,14 @@ button.addEventListener('click', function(e){
 document.documentElement.className = localStorage.getItem('Theme')
 
 
-function SwitchWithTime(){
-    if (localStorage.getItem('timeBased-Theme') === 'true'){
+function SwitchWithTime() {
+    if (localStorage.getItem('timeBased-Theme') === 'true') {
         const date = new Date();
-        if (date.getHours() < 6 && date.getHours() > 22 || date.getHours() === 0){ //////////////// Test at night
+        if (date.getHours() < 6 && date.getHours() > 22 || date.getHours() === 0) { //////////////// Test at night
             localStorage.setItem('Theme', "dark-theme");
             document.documentElement.className = localStorage.getItem('Theme');
             button.textContent = "<Theme: Dark>";
-        }else{
+        } else {
             localStorage.setItem('Theme', "light-theme");
             document.documentElement.className = localStorage.getItem('Theme');
             button.textContent = "<Theme: Light>";
@@ -55,24 +55,24 @@ function SwitchWithTime(){
     }
 }
 
-function timeBasedbtnClick(){
-        btnTB.textContent = "timeBased: " + localStorage.getItem('timeBased-Theme');
+function timeBasedbtnClick() {
+    btnTB.textContent = "timeBased: " + localStorage.getItem('timeBased-Theme');
 }
 
-btnTB.addEventListener('click', function(){
-    if (localStorage.getItem('timeBased-Theme') === 'true'){
+btnTB.addEventListener('click', function () {
+    if (localStorage.getItem('timeBased-Theme') === 'true') {
         localStorage.setItem('timeBased-Theme', false)
-    }else{
+    } else {
         localStorage.setItem('timeBased-Theme', true)
         SwitchWithTime();
     }
     timeBasedbtnClick()
 });
 
-setInterval(SwitchWithTime ,1000)
+setInterval(SwitchWithTime, 1000)
 timeBasedbtnClick()
 
-setInterval(function(){
+setInterval(function () {
     const date = new Date();
     console.log(date.getHours());
 }, 1000)

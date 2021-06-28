@@ -1,4 +1,4 @@
-.dark-theme{
+.dark-theme {
     --navbar-color: #0f0f0f;
     --navbar-text-color: #67FF67;
     --background: #212121;
@@ -17,10 +17,9 @@
     --color10: ;
     --button-color1: var(--color1);
     --button-color2: var(--color2);
-
 }
 
-.light-theme{
+.light-theme {
     --navbar-color: #dedede;
     --navbar-text-color: #666666;
     --background: #ffffff;

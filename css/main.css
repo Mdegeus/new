@@ -1,27 +1,28 @@
-body{
+body {
     background-color: var(--background);
 }
 
-.navbar, .navbar code{
+.navbar,
+.navbar code {
     background-color: var(--navbar-color);
     color: var(--navbar-text-color);
 }
 
-.footer{
+.footer {
     background-color: var(--footer-color);
 }
 
-.color1{
+.color1 {
     color: var(--color1)
 }
 
-.color2{
+.color2 {
     color: var(--color2);
 }
 
 @keyframes change-background {
     0% {
-      background-color: #69b7eb;
+        background-color: #69b7eb;
     }
     50% {
         background-color: #b3dbd3;
@@ -29,4 +30,4 @@ body{
     100% {
         background-color: #f4d6db;
     }
-  }
+}
