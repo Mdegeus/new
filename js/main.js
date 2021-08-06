@@ -1,3 +1,12 @@
+import BoxModule from "../Modules/DefautlMessageBox.js"
+const locationString = "" + window.location
+
+console.log(locationString.substr(locationString.length - 4))
+
+if (locationString.substr(locationString.length - 4) !== "html") {
+    new BoxModule("Welcome", "Welcome to my portfolio.", "Close") //// show a popup window with title, text, close button
+}
+
 const btnToTop = document.querySelector(".btn-back-top");
 const btnTB = document.querySelector(".btn-timeBased");
 const button = document.querySelector('.theme-switcher');
